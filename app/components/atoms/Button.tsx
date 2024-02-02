@@ -1,9 +1,14 @@
 import { Button } from "@/app/types/form";
 import React from "react";
 
-const Button: React.FC<Button> = ({ children, onClick, className }) => {
+const Button: React.FC<Button> = ({
+  children,
+  onClick,
+  className,
+  "data-testid": testId,
+}) => {
   return (
-    <button onClick={onClick} className={`${className}`}>
+    <button data-testid={testId} onClick={onClick} className={`${className}`}>
       {children}
     </button>
   );

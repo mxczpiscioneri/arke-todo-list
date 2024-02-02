@@ -29,6 +29,7 @@ const TaskItem: React.FC<TaskItem> = ({
           label={name}
         />
         <Button
+          data-testid="delete-task"
           onClick={handleRemoveClick}
           className="text-blue-chill-500 hover:text-blue-chill-600"
         >

@@ -20,6 +20,7 @@ const InputForm: React.FC<InputForm> = ({ onAddTask }) => {
       className="flex items-center gap-2"
     >
       <input
+        data-testid="input"
         type="text"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}

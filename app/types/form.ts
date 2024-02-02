@@ -20,4 +20,5 @@ export interface Button {
   children: React.ReactNode;
   onClick: () => void;
   className?: string;
+  "data-testid"?: string;
 }
