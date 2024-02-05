@@ -14,13 +14,15 @@ const TaskSummary: React.FC<TaskSummaryProps> = ({
       <p className="mx-2">
         {completedTasks} of {totalTasks} tasks
       </p>
-      <Button
-        data-testid="delete-all-task"
-        onClick={removeAllTasks}
-        className="mx-2 text-blue-chill-800 hover:text-blue-chill-900"
-      >
-        Remove All
-      </Button>
+      {totalTasks > 0 && (
+        <Button
+          data-testid="delete-all-task"
+          onClick={removeAllTasks}
+          className="mx-2 text-blue-chill-800 hover:text-blue-chill-900"
+        >
+          Remove All
+        </Button>
+      )}
     </div>
   );
 };
