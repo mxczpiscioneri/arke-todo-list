@@ -10,10 +10,12 @@ export interface TaskItem {
   completed: boolean;
   onToggleCompleted: (id: number) => void;
   onRemove: (id: number) => void;
+  onUpdateTaskName: (id: number, newName: string) => void;
 }
 
 export interface TaskList {
   tasks: Task[];
   onToggleCompleted: (id: number) => void;
   onRemoveTask: (id: number) => void;
+  onUpdateTaskName: (id: number, newName: string) => void;
 }

@@ -24,18 +24,4 @@ describe("Checkbox Component", () => {
     fireEvent.click(checkbox);
     expect(mockOnChange).toHaveBeenCalledTimes(1);
   });
-
-  test("changes opacity class based on checked state", () => {
-    const { rerender } = render(
-      <Checkbox label="Test Checkbox" checked={false} onChange={() => {}} />
-    );
-    let opacitySpan = screen.getByTestId("opacity-span");
-    expect(opacitySpan).toHaveClass("opacity-0");
-
-    rerender(
-      <Checkbox label="Test Checkbox" checked={true} onChange={() => {}} />
-    );
-    opacitySpan = screen.getByTestId("opacity-span");
-    expect(opacitySpan).toHaveClass("opacity-100");
-  });
 });

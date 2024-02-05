@@ -6,6 +6,7 @@ const TaskList: React.FC<TaskList> = ({
   tasks,
   onToggleCompleted,
   onRemoveTask,
+  onUpdateTaskName,
 }) => {
   return (
     <ul data-testid="task-list" className="mt-4">
@@ -15,6 +16,7 @@ const TaskList: React.FC<TaskList> = ({
           id={task.id}
           name={task.name}
           completed={task.completed}
+          onUpdateTaskName={onUpdateTaskName}
           onToggleCompleted={onToggleCompleted}
           onRemove={onRemoveTask}
         />

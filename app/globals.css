@@ -20,12 +20,6 @@ body {
   color: rgb(var(--foreground-rgb));
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
 @keyframes slideOutRight {
   from {
     transform: translateX(0);

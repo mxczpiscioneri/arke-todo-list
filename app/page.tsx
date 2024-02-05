@@ -16,6 +16,7 @@ function Home() {
     removeAllTasks,
     totalTasks,
     completedTasks,
+    updateTaskName,
   } = useTasks();
 
   return (
@@ -31,6 +32,7 @@ function Home() {
         tasks={tasks}
         onToggleCompleted={toggleTaskCompletion}
         onRemoveTask={removeTask}
+        onUpdateTaskName={updateTaskName}
       />
     </MainLayout>
   );

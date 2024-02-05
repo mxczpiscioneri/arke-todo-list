@@ -29,6 +29,17 @@ export const useTasks = (initialTasks: Task[] = []) => {
     setTasks([]);
   };
 
+  const updateTaskName = (id: number, newName: string) => {
+    setTasks(
+      tasks.map((task) => {
+        if (task.id === id) {
+          return { ...task, name: newName, isEditing: false };
+        }
+        return task;
+      })
+    );
+  };
+
   return {
     tasks,
     addTask,
@@ -37,5 +48,6 @@ export const useTasks = (initialTasks: Task[] = []) => {
     removeAllTasks,
     totalTasks: tasks.length,
     completedTasks: tasks.filter((task) => task.completed).length,
+    updateTaskName,
   };
 };
