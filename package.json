@@ -10,7 +10,8 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:ci": "jest --ci",
-    "test:e2e-run": "cypress run"
+    "test:e2e-run": "cypress run",
+    "test:e2e-open": "cypress open"
   },
   "dependencies": {
     "next": "14.1.0",

@@ -36,4 +36,3 @@ jobs:
           start: yarn dev
           wait-on: "http://localhost:3000"
           wait-on-timeout: 30
-          run: yarn test:e2e-run
