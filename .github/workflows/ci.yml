@@ -1,0 +1,39 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Run Lint
+        run: yarn lint
+
+      - name: Run Unit Tests
+        run: yarn test:ci
+
+      - name: Run E2E Tests
+        uses: cypress-io/github-action@v2
+        with:
+          start: yarn dev
+          wait-on: "http://localhost:3000"
+          wait-on-timeout: 30
+          run: yarn test:e2e-run
