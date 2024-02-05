@@ -17,7 +17,7 @@ const TaskItem: React.FC<TaskItem> = ({
     setTimeout(() => onRemove(id), 500);
   };
   return (
-    <div data-testid="task-item" className="fadeInLeft">
+    <li data-testid="task-item" className="fadeInLeft">
       <div
         className={`flex items-center justify-between gap-2 p-2 rounded border-b border-blue-chill-100 hover:bg-blue-chill-100 ${
           isExiting ? "fadeOutRight" : ""
@@ -36,7 +36,7 @@ const TaskItem: React.FC<TaskItem> = ({
           Remove
         </Button>
       </div>
-    </div>
+    </li>
   );
 };
 

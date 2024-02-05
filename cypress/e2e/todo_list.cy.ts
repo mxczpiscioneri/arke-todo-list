@@ -27,11 +27,15 @@ describe("To-Do List App E2E Tests", () => {
       .find('input[type="checkbox"]')
       .should("be.checked");
 
-    // delete tasks
-    cy.get('[data-testid="task-item"]').each(($el, index, $list) => {
-      cy.get('[data-testid="delete-task"]').first().click();
-      cy.wait(500);
-    });
+    // delete task completed
+    cy.get('[data-testid="delete-task"]').first().click();
+    cy.wait(500);
+
+    // delete all tasks
+    cy.get('[data-testid="delete-all-task"]').click();
+    cy.wait(500);
+
+    // verify
     cy.get('[data-testid="task-item"]').should("not.exist");
   });
 });

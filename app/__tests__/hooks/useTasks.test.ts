@@ -47,4 +47,18 @@ describe("useTasks Hook", () => {
 
     expect(result.current.tasks.length).toBe(0);
   });
+
+  it("should remove all tasks", () => {
+    const initialTasks = [
+      { id: 1, name: "Task 1", completed: false },
+      { id: 2, name: "Task 2", completed: true },
+    ];
+    const { result } = renderHook(() => useTasks(initialTasks));
+
+    act(() => {
+      result.current.removeAllTasks();
+    });
+
+    expect(result.current.tasks.length).toBe(0);
+  });
 });

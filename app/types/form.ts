@@ -22,3 +22,9 @@ export interface Button {
   className?: string;
   "data-testid"?: string;
 }
+
+export interface TaskSummaryProps {
+  completedTasks: number;
+  totalTasks: number;
+  removeAllTasks: () => void;
+}

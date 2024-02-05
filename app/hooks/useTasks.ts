@@ -25,10 +25,17 @@ export const useTasks = (initialTasks: Task[] = []) => {
     setTasks(updatedTasks);
   };
 
+  const removeAllTasks = () => {
+    setTasks([]);
+  };
+
   return {
     tasks,
     addTask,
     toggleTaskCompletion,
     removeTask,
+    removeAllTasks,
+    totalTasks: tasks.length,
+    completedTasks: tasks.filter((task) => task.completed).length,
   };
 };

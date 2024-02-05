@@ -17,7 +17,7 @@ const InputForm: React.FC<InputForm> = ({ onAddTask }) => {
     <form
       data-testid="input-form"
       onSubmit={handleSubmit}
-      className="flex items-center gap-2"
+      className="flex items-center gap-2 mt-4"
     >
       <input
         data-testid="input"

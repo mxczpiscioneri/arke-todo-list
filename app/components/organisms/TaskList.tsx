@@ -8,7 +8,7 @@ const TaskList: React.FC<TaskList> = ({
   onRemoveTask,
 }) => {
   return (
-    <div data-testid="task-list" className="mt-4">
+    <ul data-testid="task-list" className="mt-4">
       {tasks.map((task) => (
         <TaskItem
           key={task.id}
@@ -19,7 +19,7 @@ const TaskList: React.FC<TaskList> = ({
           onRemove={onRemoveTask}
         />
       ))}
-    </div>
+    </ul>
   );
 };
 
