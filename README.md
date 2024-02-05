@@ -15,6 +15,29 @@ This project is built using a modern stack of JavaScript/TypeScript technologies
 - **[ESLint](https://eslint.org/)**: A code analysis tool for identifying problematic patterns in JavaScript code.
 - **[Testing Library](https://testing-library.com/)**: Utilities for testing React components more effectively.
 
+## Atomic Design Methodology
+
+The Arke To-Do List application adopts the Atomic Design methodology to organize its UI components. This approach allows us to manage the complexity of the UI in a scalable and maintainable way, ensuring consistency across the application.
+
+### Key Decisions
+
+- **Atoms:** The smallest building blocks of our UI, such as buttons, input fields, and checkboxes, are designed to be reusable and serve as the foundation for more complex components. For example, our Button and Input components are used extensively throughout the application.
+- **Molecules:** Combinations of atoms that perform a specific function. The TaskItem component, which includes a checkbox (atom) and a label (atom), is an example of a molecule that represents a single to-do item.
+- **Organisms:** More complex UI components that group molecules and atoms into functional sections. The TaskList component, which displays a list of TaskItem molecules, is an example of an organism.
+- **Templates and Pages:** Templates define the layout of pages by arranging organisms and molecules, while pages are instances of templates with real content. Our application uses a MainLayout template to provide a consistent structure for different pages.
+
+### Additional Considerations
+
+Reusability and Composition: By adhering to the Atomic Design principles, we've ensured that UI components are highly reusable and easily composed into more complex structures. This reduces duplication and improves the overall development velocity.
+
+### Testing
+
+The Atomic Design approach also facilitates more effective testing. We can test atoms and molecules in isolation, ensuring their functionality before integrating them into more complex organisms and templates. This aligns with our focus on maintaining high software quality through comprehensive testing strategies.
+
+### Styling Consistency
+
+Tailwind CSS is used in conjunction with Atomic Design to ensure visual consistency and rapid styling across components. The utility-first approach of Tailwind complements the composability of Atomic Design, allowing us to apply consistent styling at the atom and molecule levels and propagate it through the application.
+
 ## Focus on Testing
 
 Software quality is ensured through a comprehensive suite of tests, including unit tests and end-to-end (E2E) tests:
